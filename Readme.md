@@ -86,22 +86,26 @@ Upload a scanned image (TIFF, PNG, JPG) → Select a model (Baseline / CNN / Hyb
 
 ## 📂 Project Structure
 
+## 📂 Project Structure
+
+```bash
 AI_TraceFinder/
 │
-├── app.py # Streamlit web app
+├── app.py                     # Streamlit web app
 ├── dataset/
-│ ├── Official/ # Core scanner images
-│ ├── flatfield/ # Flatfield reference scans
-│ ├── wiki dataset/ # Extended dataset
-│ └── Tampered images/ # Forged samples + models
-│ └── tamper_models/ # Patch-level & image-level classifiers
+│   ├── Official/              # Core scanner images
+│   ├── flatfield/             # Flatfield reference scans
+│   ├── wiki dataset/          # Extended dataset
+│   └── Tampered images/       # Forged samples + models
+│       └── tamper_models/     # Patch-level & image-level classifiers
 │
-├── models/ # Trained ML models (SVM, RF)
-├── processed_data/ # Extracted features & CSVs
-├── hybrid_cnn/ # CNN + Hybrid model training scripts
-├── scr/ # Baseline & preprocessing modules
-├── results/ # Evaluation results
-└── requirements.txt # Python dependencies
+├── models/                    # Trained ML models (SVM, RF)
+├── processed_data/            # Extracted features & CSVs
+├── hybrid_cnn/                # CNN + Hybrid model training scripts
+├── scr/                       # Baseline & preprocessing modules
+├── results/                   # Evaluation results
+├── images/                    # Screenshots for README preview
+└── requirements.txt           # Python dependencies
 
 ---
 
@@ -127,7 +131,6 @@ AI_TraceFinder/
 ---
 
 ## 🚀 Run It Yourself
-
 ```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/parthh-21/AI_TraceFinder.git
@@ -142,6 +145,7 @@ pip install -r requirements.txt
 
 # 4️⃣ Launch Streamlit app
 streamlit run app.py
+
 Your web app will start at:
 👉 http://localhost:8501
 
