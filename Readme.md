@@ -1,123 +1,136 @@
-🧠 AI TraceFinder – A Forensic Approach to Detect Forged Scans
+# 🧠 AI TraceFinder – A Forensic Approach to Detect Forged Scans
 
-Detecting document forgery and identifying scanner origins using AI-driven noise fingerprint analysis.
+> Detecting document forgery and identifying scanner origins using AI-driven noise fingerprint analysis.
 
-📖 Overview
+---
 
-In today’s digital world, even scanned documents can be forged.
+## 📖 Overview
+
+In today’s digital world, even scanned documents can be forged.  
 A fake certificate, a copied signature, or an altered legal paper can look completely real — but not to AI.
 
-AI TraceFinder is a personal forensic AI project designed to detect hidden scanner fingerprints.
-It identifies which scanner device created a scanned image and determines whether the image was tampered or manipulated.
+**AI TraceFinder** is a personal forensic AI project designed to detect hidden scanner fingerprints.  
+It identifies which scanner device created a scanned image and determines whether the image was tampered or manipulated.  
 
 The goal is simple — bring forensic-level trust and authenticity to scanned documents.
 
-🔍 What It Actually Does
+---
 
-Every scanner leaves a unique “invisible signature” —
-tiny electrical noise, subtle texture differences, and compression artifacts.
+## 🔍 What It Actually Does
 
-AI TraceFinder reads these patterns using machine learning and deep learning models to:
+Every scanner leaves a unique “invisible signature” —  
+tiny electrical noise, subtle texture differences, and compression artifacts.  
 
-Identify which scanner brand/model generated a scanned document
+AI TraceFinder reads these patterns using **machine learning** and **deep learning models** to:
 
-Detect if the scanned image was edited, copied, or forged
+- Identify which **scanner brand/model** generated a scanned document  
+- Detect if the scanned image was **edited, copied, or forged**  
+- Verify the **authenticity** of digital evidence  
 
-Verify the authenticity of digital evidence
+Think of it like a **fingerprint scanner**, but for scanners.
 
-Think of it like a fingerprint scanner, but for scanners.
+---
 
-🛠️ Tech Behind the Project
-Layer	Tools Used	Purpose
-Language	Python 3.x	Core development
-Machine Learning	Scikit-learn (SVM, Random Forest)	Baseline scanner classification
-Deep Learning	TensorFlow / Keras	CNN & hybrid models
-Image Processing	OpenCV, Scikit-Image	Noise extraction & preprocessing
-Data Handling	NumPy, Pandas	Feature matrix & metadata management
-Visualization	Matplotlib, Seaborn	Confusion matrices, plots
-UI Framework	Streamlit	Interactive prediction dashboard
-Version Control	Git + GitHub	Source and version management
-⚙️ How the System Works
-🧩 Preprocessing
+## 🛠️ Tech Behind the Project
 
-Converts the image to grayscale and normalizes intensity
+| Layer | Tools Used | Purpose |
+|-------|-------------|----------|
+| **Language** | Python 3.x | Core development |
+| **Machine Learning** | Scikit-learn (SVM, Random Forest) | Baseline scanner classification |
+| **Deep Learning** | TensorFlow / Keras | CNN & hybrid models |
+| **Image Processing** | OpenCV, Scikit-Image | Noise extraction & preprocessing |
+| **Data Handling** | NumPy, Pandas | Feature matrix & metadata management |
+| **Visualization** | Matplotlib, Seaborn | Confusion matrices, plots |
+| **UI Framework** | Streamlit | Interactive prediction dashboard |
+| **Version Control** | Git + GitHub | Source and version management |
 
-Extracts residual noise using wavelet transforms
+---
 
-🔬 Feature Extraction
+## ⚙️ How the System Works
 
-Captures texture-based features like LBP, FFT energy, and contrast variance
+### 🧩 Preprocessing
+- Converts the image to grayscale and normalizes intensity  
+- Extracts residual noise using wavelet transforms  
 
-🧠 Model Training
+### 🔬 Feature Extraction
+- Captures texture-based features like **LBP**, **FFT energy**, and **contrast variance**
 
-Trains SVM and Random Forest models on extracted features
+### 🧠 Model Training
+- Trains **SVM** and **Random Forest** models on extracted features  
+- Trains **CNN** to directly learn image patterns  
+- Combines both into a **Hybrid CNN+SVM** model for balanced performance  
 
-Trains CNN to directly learn image patterns
+### 🔍 Prediction Phase
+- Upload an image → choose model → get predicted **scanner identity** + **tamper label**
 
-Combines both into a Hybrid CNN+SVM model for balanced performance
+### 📊 Visualization
+- Displays class confidence, confusion matrices, and evaluation metrics
 
-🔍 Prediction Phase
+---
 
-Upload an image → choose model → get predicted scanner identity + tamper label
+## 📸 Demo & Interface Preview
 
-📊 Visualization
+Here’s a quick look at the **AI TraceFinder** web app — designed for scanner source identification and tamper detection.
 
-Displays class confidence, confusion matrices, and evaluation metrics
-
-📸 Demo & Interface Preview
-
-Here’s a quick look at the AI TraceFinder web app — designed for scanner source identification and tamper detection.
-
-🏠 Home Dashboard
-
+### 🏠 Home Dashboard  
 Displays dataset insights such as image count, scanner classes, and DPI levels.
 
-<img src="images/home_interface.png" width="800"/>
-🤖 Live Prediction Page
+<img src="images/home_interface.png" alt="Home Interface" width="800"/>
 
+### 🤖 Live Prediction Page  
 Upload a scanned image (TIFF, PNG, JPG) → Select a model (Baseline / CNN / Hybrid 27D+CNN) → Get real-time predictions.
 
-<img src="images/live_prediction.png" width="800"/>
-📂 Project Structure
+<img src="images/live_prediction.png" alt="Live Prediction Page" width="800"/>
+
+---
+
+## 📂 Project Structure
+
 AI_TraceFinder/
 │
-├── app.py                     # Streamlit web app
+├── app.py # Streamlit web app
 ├── dataset/
-│   ├── Official/              # Core scanner images
-│   ├── flatfield/             # Flatfield reference scans
-│   ├── wiki dataset/          # Extended dataset
-│   └── Tampered images/       # Forged samples + models
-│       └── tamper_models/     # Patch-level & image-level classifiers
+│ ├── Official/ # Core scanner images
+│ ├── flatfield/ # Flatfield reference scans
+│ ├── wiki dataset/ # Extended dataset
+│ └── Tampered images/ # Forged samples + models
+│ └── tamper_models/ # Patch-level & image-level classifiers
 │
-├── models/                    # Trained ML models (SVM, RF)
-├── processed_data/            # Extracted features & CSVs
-├── hybrid_cnn/                # CNN + Hybrid model training scripts
-├── scr/                       # Baseline & preprocessing modules
-├── results/                   # Evaluation results
-└── requirements.txt           # Python dependencies
+├── models/ # Trained ML models (SVM, RF)
+├── processed_data/ # Extracted features & CSVs
+├── hybrid_cnn/ # CNN + Hybrid model training scripts
+├── scr/ # Baseline & preprocessing modules
+├── results/ # Evaluation results
+└── requirements.txt # Python dependencies
 
-🎨 Streamlit App Features
+---
 
-🧠 Choose Model → Baseline / CNN / Hybrid
+## 🎨 Streamlit App Features
 
-📸 Upload an Image → Instant scanner prediction
+- 🧠 Choose Model → Baseline / CNN / Hybrid  
+- 📸 Upload an Image → Instant scanner prediction  
+- 🧩 Tamper Detection → Identify manipulated areas  
+- 📊 Evaluate → View confusion matrix & accuracy  
+- 📈 Explore Dataset → Visualize scanners & DPI distributions  
 
-🧩 Tamper Detection → Identify manipulated areas
+---
 
-📊 Evaluate → View confusion matrix & accuracy
+## 🧪 Performance Snapshot
 
-📈 Explore Dataset → Visualize scanners & DPI distributions
+| Model | Accuracy | Highlights |
+|--------|-----------|------------|
+| **Hybrid CNN** | ~82% | Strong balance between accuracy & interpretability |
+| **SVM** | ~75% | Effective for structured metadata features |
+| **Random Forest** | ~73% | Reliable baseline performance |
+| **Tamper Classifier** | Active | Detects splicing, copy-move, and retouching |
 
-🧪 Performance Snapshot
-Model	Accuracy	Highlights
-Hybrid CNN	~82%	Strong balance between accuracy & interpretability
-SVM	~75%	Effective for structured metadata features
-Random Forest	~73%	Reliable baseline performance
-Tamper Classifier	Active	Detects splicing, copy-move, and retouching
-🚀 Run It Yourself
+---
 
-Tested on Python 3.10 (Windows 11)
+## 🚀 Run It Yourself
 
+> Tested on Python 3.10 (Windows 11)
+
+```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/parthh-21/AI_TraceFinder.git
 cd AI_TraceFinder
@@ -131,8 +144,6 @@ pip install -r requirements.txt
 
 # 4️⃣ Launch Streamlit app
 streamlit run app.py
-
-
 Your web app will start at:
 👉 http://localhost:8501
 
@@ -178,3 +189,7 @@ Licensed under the MIT License —
 You are free to use, modify, and build upon this project for learning or research purposes.
 
 ⭐ If this project inspired you or helped your learning, give it a star on GitHub!
+
+
+---
+
