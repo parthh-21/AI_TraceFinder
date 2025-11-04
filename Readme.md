@@ -86,8 +86,6 @@ Upload a scanned image (TIFF, PNG, JPG) → Select a model (Baseline / CNN / Hyb
 
 ## 📂 Project Structure
 
-## 📂 Project Structure
-
 ```bash
 AI_TraceFinder/
 │
@@ -107,7 +105,7 @@ AI_TraceFinder/
 ├── images/                    # Screenshots for README preview
 └── requirements.txt           # Python dependencies
 
----
+`````
 
 ## 🎨 Streamlit App Features
 
