@@ -128,8 +128,6 @@ AI_TraceFinder/
 
 ## 🚀 Run It Yourself
 
-> Tested on Python 3.10 (Windows 11)
-
 ```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/parthh-21/AI_TraceFinder.git
