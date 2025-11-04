@@ -122,8 +122,8 @@ AI_TraceFinder/
 | Model | Accuracy | Highlights |
 |--------|-----------|------------|
 | **Hybrid CNN** | ~82% | Strong balance between accuracy & interpretability |
-| **SVM** | ~75% | Effective for structured metadata features |
-| **Random Forest** | ~73% | Reliable baseline performance |
+| **SVM** | ~53% | Effective for structured metadata features |
+| **Random Forest** | ~50% | Reliable baseline performance |
 | **Tamper Classifier** | Active | Detects splicing, copy-move, and retouching |
 
 ---
@@ -144,6 +144,7 @@ pip install -r requirements.txt
 # 4️⃣ Launch Streamlit app
 streamlit run app.py
 
+`````
 Your web app will start at:
 👉 http://localhost:8501
 
